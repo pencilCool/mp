@@ -1,31 +1,33 @@
 // index.js
 // 获取应用实例
 const app = getApp()
-
+const audioCtx = wx.createWebAudioContext()
+let oscillator = audioCtx.createOscillator()
+console.log(audioCtx)
 Page({
   data: {
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    canIUseGetUserProfile: false,
-    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') // 如需尝试获取用户信息可改为false
+    
+  },
+
+  touchstart() {
+    console.log("touchstart")
+    oscillator = audioCtx.createOscillator()
+    oscillator.type = 'square';
+    oscillator.frequency.setValueAtTime(440, audioCtx.currentTime); // value in hertz
+    oscillator.connect(audioCtx.destination);
+    oscillator.start();
   },
   // 事件处理函数
   touchend() {
     console.log("touchend")
-  },
-
-  touchstart() {
-      console.log("touchstart")
+    oscillator.stop();
   },
 
   onLoad() {
-    if (wx.getUserProfile) {
-      this.setData({
-        canIUseGetUserProfile: true
-      })
-    }
+   
   },
   getUserProfile(e) {
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
