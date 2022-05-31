@@ -1,11 +1,9 @@
 <!--index.wxml-->
 <view class="container">
   <view class="userinfo">
-    <wxs module="wxs" src="./index.wxs"></wxs>
-    <view id="tapTest" class="button" data-hi="Weixin" bindtap="{{wxs.tapName}}"> Click me! </view>
-
     <button class="button" bind:touchstart="touchstart"
      bind:touchend="touchend" ></button>
+     
    
     
   </view>
