@@ -6,6 +6,7 @@
       <a href="/test/detail/123" target="_blank">新开页面跳转</a>
       <button @click="onClickJump">当前页跳转</button>
       <button @click="onClickOpen">新开页面跳转</button>
+      <button bind:touchend="touchend">测试mouseup & mousedown </button>
     </div>
     <!-- vue-improve-loader -->
     <div check-reduce>
@@ -60,6 +61,9 @@ export default Vue.extend({
 
     onClickOpen() {
       window.open('/test/detail/123')
+    },
+    touchend() {
+      console.log('touched')
     },
   },
 })
