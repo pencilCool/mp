@@ -12,11 +12,14 @@ Page({
     canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') // 如需尝试获取用户信息可改为false
   },
   // 事件处理函数
-  bindViewTap() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+  touchend() {
+    console.log("touchend")
   },
+
+  touchstart() {
+      console.log("touchstart")
+  },
+
   onLoad() {
     if (wx.getUserProfile) {
       this.setData({
