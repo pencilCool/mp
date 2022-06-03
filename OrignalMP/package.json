@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "miniprogram-sm-crypto": "^0.3.8",
-    "webaudiofont": "^3.0.1"
+    "mobx-miniprogram": "^4.13.2",
+    "mobx-miniprogram-bindings": "^2.1.5"
   }
 }

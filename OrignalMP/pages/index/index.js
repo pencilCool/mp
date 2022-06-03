@@ -1,14 +1,14 @@
 import  { WebAudioFontPlayer } from './webaudiofont'
 
 import  { _tone_0250_SoundBlasterOld_sf2 } from './0250_SoundBlasterOld_sf2.js'
+
+import { createStoreBindings } from 'mobx-miniprogram-bindings'
+import { store } from './store'
+
 const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    
   },
 
   touchstart() {
@@ -20,11 +20,11 @@ Page({
   },
 
   touchstartHalfStep () {
-    console.log("touchstartHalfStep")
+    store.halfStep = 1
   },
 
   touchendHalfStep () {
-    console.log("touchendHalfStep")
+    store.halfStep = 0
   },
 
   touchstartOctave () {
@@ -44,27 +44,29 @@ Page({
   },
 
   touchstart1() {
-   console.log("touchstart1")
+    console.log("touchstart1")
+   store.one = 1;
   },
 
   touchend1() {
     console.log("touchend1")
+    store.one = 0
   },
 
   touchstart2() {
-    console.log("touchstart2")
+    store.two = 1
   },
 
   touchend2() {
-    console.log("touchend2")
+    store.two = 0
   },
 
   touchstart4() {
-    console.log("touchstart4")
+    store.four = 1
   },
 
   touchend4() {
-    console.log("touchend4")
+    store.four = 0
   },
 
   tap() {
@@ -81,8 +83,16 @@ Page({
   },
 
   onLoad() {
-   
+    this.storeBindings = createStoreBindings(this, {
+      store, 
+      fields: ["scale"]
+    })
   },
+
+  onUnload() {
+    this.storeBindings.destroyStoreBindings();
+  },
+
   getUserProfile(e) {
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
     wx.getUserProfile({

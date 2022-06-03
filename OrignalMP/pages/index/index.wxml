@@ -14,6 +14,8 @@
       <button class="button" bind:touchstart="touchstart2" bind:touchend="touchend2" >2</button>
       <button class="button" bind:touchstart="touchstart4" bind:touchend="touchend4" >4</button>
     </view>
-
+    <view class="row">
+      <view class="button">{{scale}}</view>
+    </view>
 </view>
 
