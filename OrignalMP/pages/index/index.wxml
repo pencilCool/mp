@@ -4,7 +4,7 @@
     <button class="button" bind:touchstart="touchstart"
      bind:touchend="touchend" ></button>
      
-   
+     <button class="button" bindtap="tap" ></button>
     
   </view>
 </view>

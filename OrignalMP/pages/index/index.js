@@ -3,6 +3,9 @@
 const app = getApp()
 const audioCtx = wx.createWebAudioContext()
 let oscillator = audioCtx.createOscillator()
+var webaudiofont = require('webaudiofont');
+
+
 console.log(audioCtx)
 Page({
   data: {
@@ -15,7 +18,7 @@ Page({
   touchstart() {
     console.log("touchstart")
     oscillator = audioCtx.createOscillator()
-    oscillator.type = 'square';
+    oscillator.type = 'sine';
     oscillator.frequency.setValueAtTime(440, audioCtx.currentTime); // value in hertz
     oscillator.connect(audioCtx.destination);
     oscillator.start();
@@ -24,6 +27,12 @@ Page({
   touchend() {
     console.log("touchend")
     oscillator.stop();
+  },
+
+  tap() {
+      console.log("tap")
+    
+      var player = new WebAudioFontPlayer();
   },
 
   onLoad() {
