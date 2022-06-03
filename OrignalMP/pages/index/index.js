@@ -3,8 +3,7 @@ import  { WebAudioFontPlayer } from './webaudiofont'
 import  { _tone_0250_SoundBlasterOld_sf2 } from './0250_SoundBlasterOld_sf2.js'
 
 const app = getApp()
-const audioCtx = wx.createWebAudioContext()
-let oscillator = audioCtx.createOscillator()
+
 
 
 Page({
