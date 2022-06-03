@@ -1,4 +1,8 @@
 
+console.log("webaudiofonts module load")
+var window = wx
+console.log(window)
+
 export const WebAudioFontChannel = /** @class */ (function () {
   function WebAudioFontChannel(audioContext) {
       this.audioContext = audioContext;
@@ -30,6 +34,8 @@ export const WebAudioFontChannel = /** @class */ (function () {
 }());
 
 export const WebAudioFontLoader = /** @class */ (function () {
+
+
   function WebAudioFontLoader(player) {
       this.cached = [];
       this.instrumentKeyArray = [];

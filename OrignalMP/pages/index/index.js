@@ -1,5 +1,7 @@
 import  { WebAudioFontPlayer } from './webaudiofont'
 
+import  { _tone_0250_SoundBlasterOld_sf2 } from './0250_SoundBlasterOld_sf2.js'
+
 const app = getApp()
 const audioCtx = wx.createWebAudioContext()
 let oscillator = audioCtx.createOscillator()
@@ -29,8 +31,15 @@ Page({
 
   tap() {
       console.log("tap")
-      var player = new WebAudioFontPlayer()
-      console.log(player)
+      const audioContext = wx.createWebAudioContext()
+			var player= new WebAudioFontPlayer();
+			player.loader.decodeAfterLoading(audioContext, '_tone_0250_SoundBlasterOld_sf2');
+			function play(){
+				player.queueWaveTable(audioContext, audioContext.destination
+					, _tone_0250_SoundBlasterOld_sf2, 0, 12*4+7, 2);
+        return false;
+        }
+      play()
   },
 
   onLoad() {
