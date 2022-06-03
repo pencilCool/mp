@@ -1,10 +1,7 @@
-// index.js
-// 获取应用实例
+
 const app = getApp()
 const audioCtx = wx.createWebAudioContext()
 let oscillator = audioCtx.createOscillator()
-// var webaudiofont = require('webaudiofont');
-
 
 console.log(audioCtx)
 Page({
@@ -31,8 +28,7 @@ Page({
 
   tap() {
       console.log("tap")
-    
-      var player = new WebAudioFontPlayer();
+  
   },
 
   onLoad() {

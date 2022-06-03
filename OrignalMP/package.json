@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "soundfont-player": "^0.12.0",
-    "webaudiofont": "^3.0.1"
+    "miniprogram-sm-crypto": "^0.3.8"
   }
 }
