@@ -1,9 +1,10 @@
+import  { WebAudioFontPlayer } from './webaudiofont'
 
 const app = getApp()
 const audioCtx = wx.createWebAudioContext()
 let oscillator = audioCtx.createOscillator()
 
-console.log(audioCtx)
+
 Page({
   data: {
     motto: 'Hello World',
@@ -28,7 +29,8 @@ Page({
 
   tap() {
       console.log("tap")
-  
+      var player = new WebAudioFontPlayer()
+      console.log(player)
   },
 
   onLoad() {
