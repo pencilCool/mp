@@ -1,10 +1,19 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <button class="button" bind:touchstart="touchstart"
-     bind:touchend="touchend" ></button>
-     
-     <button class="button" bindtap="tap" ></button>
+    <view class="row">
+      <button class="button" bindtap="tap">测试</button>
+    </view>
     
-  </view>
+    <view class="row">
+      <button class="button" bind:touchstart="touchstart" bind:touchend="touchend" >#半音</button>
+      <button class="button" bind:touchstart="touchstart" bind:touchend="touchend" >中音</button>
+      <button class="button" bind:touchstart="touchstart" bind:touchend="touchend" >高音</button>
+    </view>
+    <view class="row">
+      <button class="button" bind:touchstart="touchstart" bind:touchend="touchend" >1</button>
+      <button class="button" bind:touchstart="touchstart" bind:touchend="touchend" >2</button>
+      <button class="button" bind:touchstart="touchstart" bind:touchend="touchend" >4</button>
+    </view>
+
 </view>
+

@@ -4,7 +4,7 @@ var __DEFINE__ = function(modId, func, req) { var m = { exports: {}, _tempexport
 var __REQUIRE__ = function(modId, source) { if(!__MODS__[modId]) return require(source); if(!__MODS__[modId].status) { var m = __MODS__[modId].m; m._exports = m._tempexports; var desp = Object.getOwnPropertyDescriptor(m, "exports"); if (desp && desp.configurable) Object.defineProperty(m, "exports", { set: function (val) { if(typeof val === "object" && val !== m._exports) { m._exports.__proto__ = val.__proto__; Object.keys(val).forEach(function (k) { m._exports[k] = val[k]; }); } m._tempexports = val }, get: function () { return m._tempexports; } }); __MODS__[modId].status = 1; __MODS__[modId].func(__MODS__[modId].req, m, m.exports); } return __MODS__[modId].m.exports; };
 var __REQUIRE_WILDCARD__ = function(obj) { if(obj && obj.__esModule) { return obj; } else { var newObj = {}; if(obj != null) { for(var k in obj) { if (Object.prototype.hasOwnProperty.call(obj, k)) newObj[k] = obj[k]; } } newObj.default = obj; return newObj; } };
 var __REQUIRE_DEFAULT__ = function(obj) { return obj && obj.__esModule ? obj.default : obj; };
-__DEFINE__(1654179213595, function(require, module, exports) {
+__DEFINE__(1654223908378, function(require, module, exports) {
 
 
 var player = require('./player')
@@ -20,8 +20,8 @@ function SamplePlayer (ac, source, options) {
 if (typeof module === 'object' && module.exports) module.exports = SamplePlayer
 if (typeof window !== 'undefined') window.SamplePlayer = SamplePlayer
 
-}, function(modId) {var map = {"./player":1654179213596,"./events":1654179213597,"./notes":1654179213598,"./scheduler":1654179213599,"./midi":1654179213600}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1654179213596, function(require, module, exports) {
+}, function(modId) {var map = {"./player":1654223908379,"./events":1654223908380,"./notes":1654223908381,"./scheduler":1654223908382,"./midi":1654223908383}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1654223908379, function(require, module, exports) {
 /* global AudioBuffer */
 
 
@@ -236,7 +236,7 @@ function centsToRate (cents) { return cents ? Math.pow(2, cents / 1200) : 1 }
 module.exports = SamplePlayer
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1654179213597, function(require, module, exports) {
+__DEFINE__(1654223908380, function(require, module, exports) {
 
 module.exports = function (player) {
   /**
@@ -265,7 +265,7 @@ function chain (fn1, fn2) {
 }
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1654179213598, function(require, module, exports) {
+__DEFINE__(1654223908381, function(require, module, exports) {
 
 
 var note = require('note-parser')
@@ -304,7 +304,7 @@ function mapBuffers (buffers, toKey) {
 }
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1654179213599, function(require, module, exports) {
+__DEFINE__(1654223908382, function(require, module, exports) {
 
 
 var isArr = Array.isArray
@@ -369,7 +369,7 @@ module.exports = function (player) {
 }
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1654179213600, function(require, module, exports) {
+__DEFINE__(1654223908383, function(require, module, exports) {
 var midimessage = require('midimessage')
 
 module.exports = function (player) {
@@ -421,7 +421,7 @@ module.exports = function (player) {
 }
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-return __REQUIRE__(1654179213595);
+return __REQUIRE__(1654223908378);
 })()
 //miniprogram-npm-outsideDeps=["adsr","note-parser","midimessage"]
 //# sourceMappingURL=index.js.map

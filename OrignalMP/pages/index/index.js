@@ -3,7 +3,7 @@
 const app = getApp()
 const audioCtx = wx.createWebAudioContext()
 let oscillator = audioCtx.createOscillator()
-var webaudiofont = require('webaudiofont');
+// var webaudiofont = require('webaudiofont');
 
 
 console.log(audioCtx)
