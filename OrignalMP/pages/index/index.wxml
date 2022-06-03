@@ -5,14 +5,14 @@
     </view>
     
     <view class="row">
-      <button class="button" bind:touchstart="touchstart" bind:touchend="touchend" >#半音</button>
-      <button class="button" bind:touchstart="touchstart" bind:touchend="touchend" >中音</button>
-      <button class="button" bind:touchstart="touchstart" bind:touchend="touchend" >高音</button>
+      <button class="button" bind:touchstart="touchstartHalfStep" bind:touchend="touchendHalfStep" >#半音</button>
+      <button class="button" bind:touchstart="touchstartOctave" bind:touchend="touchendOctave" >中音</button>
+      <button class="button" bind:touchstart="touchstartTwoOctaves" bind:touchend="touchendTwoOctaves" >高音</button>
     </view>
     <view class="row">
-      <button class="button" bind:touchstart="touchstart" bind:touchend="touchend" >1</button>
-      <button class="button" bind:touchstart="touchstart" bind:touchend="touchend" >2</button>
-      <button class="button" bind:touchstart="touchstart" bind:touchend="touchend" >4</button>
+      <button class="button" bind:touchstart="touchstart1" bind:touchend="touchend1" >1</button>
+      <button class="button" bind:touchstart="touchstart2" bind:touchend="touchend2" >2</button>
+      <button class="button" bind:touchstart="touchstart4" bind:touchend="touchend4" >4</button>
     </view>
 
 </view>

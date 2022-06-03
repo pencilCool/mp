@@ -1,10 +1,7 @@
 import  { WebAudioFontPlayer } from './webaudiofont'
 
 import  { _tone_0250_SoundBlasterOld_sf2 } from './0250_SoundBlasterOld_sf2.js'
-
 const app = getApp()
-
-
 
 Page({
   data: {
@@ -20,6 +17,54 @@ Page({
   // 事件处理函数
   touchend() {
  
+  },
+
+  touchstartHalfStep () {
+    console.log("touchstartHalfStep")
+  },
+
+  touchendHalfStep () {
+    console.log("touchendHalfStep")
+  },
+
+  touchstartOctave () {
+    console.log("touchstartOctave")
+  },
+
+  touchendOctave () {
+    console.log("touchendOctave")
+  },
+
+  touchstartTwoOctaves () {
+    console.log("touchstartTwoOctaves")
+  },
+
+  touchendTwoOctaves () {
+    console.log("touchendTwoOctaves")
+  },
+
+  touchstart1() {
+   console.log("touchstart1")
+  },
+
+  touchend1() {
+    console.log("touchend1")
+  },
+
+  touchstart2() {
+    console.log("touchstart2")
+  },
+
+  touchend2() {
+    console.log("touchend2")
+  },
+
+  touchstart4() {
+    console.log("touchstart4")
+  },
+
+  touchend4() {
+    console.log("touchend4")
   },
 
   tap() {
