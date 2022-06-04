@@ -3,20 +3,17 @@ import  { WebAudioFontPlayer } from './webaudiofont'
 import  { _tone_0250_SoundBlasterOld_sf2 } from './0250_SoundBlasterOld_sf2.js'
 
 import { createStoreBindings } from 'mobx-miniprogram-bindings'
+import { observable, action, autorun } from 'mobx-miniprogram'
 import { store } from '../store'
+
+const audioContext = wx.createWebAudioContext()
+var player= new WebAudioFontPlayer();
+player.loader.decodeAfterLoading(audioContext, '_tone_0250_SoundBlasterOld_sf2');
 
 const app = getApp()
 
 Page({
   data: {
-  },
-
-  touchstart() {
-   
-  },
-  // 事件处理函数
-  touchend() {
- 
   },
 
   touchstartHalfStep () {
@@ -26,7 +23,7 @@ Page({
   touchendHalfStep () {
     store.halfStep = 0
   },
-
+  
   touchstartOctave () {
     store.octave = 1
   },
@@ -44,12 +41,10 @@ Page({
   },
 
   touchstart1() {
-   console.log("touchstart1")
    store.one = 1;
   },
 
   touchend1() {
-    console.log("touchend1")
     store.one = 0
   },
 
@@ -69,17 +64,14 @@ Page({
     store.four = 0
   },
 
+  play(note){
+    player.queueWaveTable(audioContext, audioContext.destination
+      , _tone_0250_SoundBlasterOld_sf2, 0, note, 2);
+    return false;
+  },
+
   tap() {
-      console.log("tap")
-      const audioContext = wx.createWebAudioContext()
-			var player= new WebAudioFontPlayer();
-			player.loader.decodeAfterLoading(audioContext, '_tone_0250_SoundBlasterOld_sf2');
-			function play(){
-				player.queueWaveTable(audioContext, audioContext.destination
-					, _tone_0250_SoundBlasterOld_sf2, 0, 12*4+7, 2);
-        return false;
-        }
-      play()
+    this.play(100)
   },
 
   goSetting() {
@@ -93,6 +85,12 @@ Page({
       store, 
       fields: ["scale","note"]
     })
+
+    autorun(() => {
+      console.log("Tasks left: ")
+      this.play(store.note)
+    })
+    
   },
 
   onUnload() {
@@ -110,14 +108,6 @@ Page({
           hasUserInfo: true
         })
       }
-    })
-  },
-  getUserInfo(e) {
-    // 不推荐使用getUserInfo获取用户信息，预计自2021年4月13日起，getUserInfo将不再弹出弹窗，并直接返回匿名的用户个人信息
-    console.log(e)
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
     })
   }
 })

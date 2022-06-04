@@ -1,9 +1,9 @@
 // pages/settings/index.js
 // https://www.inspiredacoustics.com/en/MIDI_note_numbers_and_center_frequencies
 
-import { createStoreBindings } from 'mobx-miniprogram-bindings'
+// import { createStoreBindings } from 'mobx-miniprogram-bindings'
 import { store } from '../store'
-import {midi_note_name } from './midi_note'
+import { midi_note_name } from './midi_note'
 
 Page({
   data: {
@@ -22,6 +22,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
   },
 
   /**

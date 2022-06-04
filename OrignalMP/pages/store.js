@@ -25,7 +25,7 @@ export const store = observable({
 
   twoOctave:1,
 
-  baseNote:68,
+  baseNote:69, //  midi note of A4
 
   // 计算属性
   get scale() {
@@ -33,7 +33,8 @@ export const store = observable({
   },
 
   get note() {
-    return chromaticScaleMap[this.scale] + this.halfStep +  this.octave * 12 + this.twoOctave * 24 + this.baseNote
+    return chromaticScaleMap[this.scale] + this.halfStep + 
+     this.octave * 12 + this.twoOctave * 24 + this.baseNote
   },
 
   // // actions
