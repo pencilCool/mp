@@ -16,6 +16,7 @@
     </view>
     <view class="row">
       <view class="button">{{scale}}</view>
+      <view class="button">{{note}}</view>
     </view>
 </view>
 

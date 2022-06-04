@@ -3,7 +3,7 @@ import  { WebAudioFontPlayer } from './webaudiofont'
 import  { _tone_0250_SoundBlasterOld_sf2 } from './0250_SoundBlasterOld_sf2.js'
 
 import { createStoreBindings } from 'mobx-miniprogram-bindings'
-import { store } from './store'
+import { store } from 'store'
 
 const app = getApp()
 
@@ -28,23 +28,23 @@ Page({
   },
 
   touchstartOctave () {
-    console.log("touchstartOctave")
+    store.octave = 1
   },
 
   touchendOctave () {
-    console.log("touchendOctave")
+    store.octave = 0
   },
 
   touchstartTwoOctaves () {
-    console.log("touchstartTwoOctaves")
+    store.twoOctave = 1
   },
 
   touchendTwoOctaves () {
-    console.log("touchendTwoOctaves")
+    store.twoOctave = 0 
   },
 
   touchstart1() {
-    console.log("touchstart1")
+   console.log("touchstart1")
    store.one = 1;
   },
 
@@ -85,7 +85,7 @@ Page({
   onLoad() {
     this.storeBindings = createStoreBindings(this, {
       store, 
-      fields: ["scale"]
+      fields: ["scale","note"]
     })
   },
 
