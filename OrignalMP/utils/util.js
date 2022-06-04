@@ -14,6 +14,10 @@ const formatNumber = n => {
   return n[1] ? n : `0${n}`
 }
 
+const range = (start, step, stop) => {
+  return Array.from({ length: (stop - start) / step + 1}, (_, i) => start + (i * step));
+}
+
 module.exports = {
   formatTime
 }

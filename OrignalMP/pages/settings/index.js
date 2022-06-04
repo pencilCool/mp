@@ -1,26 +1,27 @@
 // pages/settings/index.js
 // https://www.inspiredacoustics.com/en/MIDI_note_numbers_and_center_frequencies
 
+import { createStoreBindings } from 'mobx-miniprogram-bindings'
 import { store } from '../store'
+import {midi_note_name } from './midi_note'
 
 Page({
   data: {
-    index:0,
-    baseNotes: ['美国', '中国', '巴西', '日本']
+    notePickerIndex:midi_note_name.findIndex(x => x.note === store.baseNote),
+    baseNotes: midi_note_name
   },
 
   bindPickerChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      index: e.detail.value
+      notePickerIndex:e.detail.value
     })
+    store.baseNote = this.data.baseNotes[this.data.notePickerIndex].note
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
   },
 
   /**

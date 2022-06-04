@@ -1,8 +1,8 @@
 <!--pages/settings/index.wxml-->
 <text>设置</text>
 
-<picker bindchange="bindPickerChange" value="{{index}}" range="{{baseNotes}}">
+<picker bindchange="bindPickerChange" value="{{notePickerIndex}}" range-key="name" range="{{baseNotes}}">
     <view class="picker">
-      最低音1：{{baseNotes[index]}}
+      最低音1:  {{baseNotes[notePickerIndex].name}}    MIDI Note: ({{baseNotes[notePickerIndex].note}})
     </view>
 </picker>

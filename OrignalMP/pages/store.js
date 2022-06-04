@@ -3,7 +3,6 @@
 // https://github.com/wechat-miniprogram/mobx-miniprogram-bindings
 // 
 import { observable, action } from 'mobx-miniprogram'
-
 const chromaticScaleMap = {
   0:-1000,
   1:0,
@@ -35,7 +34,7 @@ export const store = observable({
 
   get note() {
     return chromaticScaleMap[this.scale] + this.halfStep +  this.octave * 12 + this.twoOctave * 24 + this.baseNote
-  }
+  },
 
   // // actions
   // update: action(function () {
