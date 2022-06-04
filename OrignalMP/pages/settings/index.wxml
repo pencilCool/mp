@@ -1,2 +1,8 @@
 <!--pages/settings/index.wxml-->
 <text>设置</text>
+
+<picker bindchange="bindPickerChange" value="{{index}}" range="{{baseNotes}}">
+    <view class="picker">
+      最低音1：{{baseNotes[index]}}
+    </view>
+</picker>
