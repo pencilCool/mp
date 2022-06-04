@@ -17,6 +17,7 @@
     <view class="row">
       <view class="button">{{scale}}</view>
       <view class="button">{{note}}</view>
+      <button class="button" bindtap="goSetting">setting</button>
     </view>
 </view>
 

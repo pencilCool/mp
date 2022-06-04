@@ -1,4 +1,7 @@
 // pages/settings/index.js
+
+import { store } from '../store'
+
 Page({
 
   /**

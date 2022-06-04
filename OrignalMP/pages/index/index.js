@@ -3,7 +3,7 @@ import  { WebAudioFontPlayer } from './webaudiofont'
 import  { _tone_0250_SoundBlasterOld_sf2 } from './0250_SoundBlasterOld_sf2.js'
 
 import { createStoreBindings } from 'mobx-miniprogram-bindings'
-import { store } from 'store'
+import { store } from '../store'
 
 const app = getApp()
 
@@ -80,6 +80,12 @@ Page({
         return false;
         }
       play()
+  },
+
+  goSetting() {
+    wx.navigateTo({
+      url:'/pages/settings/index'
+    })
   },
 
   onLoad() {
