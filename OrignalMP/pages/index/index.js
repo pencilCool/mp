@@ -1,14 +1,19 @@
-import  { WebAudioFontPlayer } from './webaudiofont'
-
-import  { _tone_0250_SoundBlasterOld_sf2 } from './0250_SoundBlasterOld_sf2.js'
 
 import { createStoreBindings } from 'mobx-miniprogram-bindings'
 import { observable, action, autorun } from 'mobx-miniprogram'
 import { store } from '../store'
 
+import  { WebAudioFontPlayer } from './webaudiofont'
+
+import  { _tone_0250_SoundBlasterOld_sf2 } from './0250_SoundBlasterOld_sf2.js'
+// import  { _tone_0000_JCLive_sf2_file } from './0000_JCLive_sf2_file.js'
+
+import  { _tone_0750_Chaos_sf2_file } from './0750_Chaos_sf2_file.js'
+
+
 const audioContext = wx.createWebAudioContext()
 var player= new WebAudioFontPlayer();
-player.loader.decodeAfterLoading(audioContext, '_tone_0250_SoundBlasterOld_sf2');
+player.loader.decodeAfterLoading(audioContext, '_tone_0750_Chaos_sf2_file');
 
 const app = getApp()
 
@@ -23,7 +28,7 @@ Page({
   touchendHalfStep () {
     store.halfStep = 0
   },
-  
+
   touchstartOctave () {
     store.octave = 1
   },
@@ -65,13 +70,19 @@ Page({
   },
 
   play(note){
-    player.queueWaveTable(audioContext, audioContext.destination
-      , _tone_0250_SoundBlasterOld_sf2, 0, note, 2);
-    return false;
+    this.playNote = player.queueWaveTable(audioContext, audioContext.destination
+      , _tone_0750_Chaos_sf2_file, 0, note, 2);
+  },
+
+  stopPlay() {
+    if(this.playNote){
+      this.playNote.cancel();
+      this.playNote = null;
+    }
   },
 
   tap() {
-    this.play(100)
+    this.play(60)
   },
 
   goSetting() {
@@ -87,8 +98,13 @@ Page({
     })
 
     autorun(() => {
-      console.log("Tasks left: ")
-      this.play(store.note)
+      console.log("note:",store.note)
+      if (store.note > 0) {
+        this.play(store.note)
+      } else {
+        this.stopPlay()
+      }
+     
     })
     
   },
