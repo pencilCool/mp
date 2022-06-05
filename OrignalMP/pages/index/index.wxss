@@ -3,7 +3,7 @@
 .button {
   display: flex;
   background-color:#352066;
-  height: 60pt;
+  height: 100pt;
   flex-basis: 30%;
   color: aliceblue;
 }

@@ -7,7 +7,7 @@ import { midi_note_name } from './midi_note'
 
 Page({
   data: {
-    notePickerIndex:midi_note_name.findIndex(x => x.note === store.baseNote),
+    notePickerIndex:0,
     baseNotes: midi_note_name
   },
 
@@ -22,7 +22,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+      this.setData({
+        notePickerIndex:midi_note_name.findIndex(x => x.note === store.baseNote)
+      })
   },
 
   /**

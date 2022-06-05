@@ -6,14 +6,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 10rpx 0;
 } 
 
 .row {
-  width: 80%;
+  width: 90%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 50rpx 0pt;
+  padding: 60rpx 0pt;
 } 

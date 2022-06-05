@@ -1,8 +1,6 @@
 
-console.log("webaudiofonts module load")
-var window = wx
-console.log(window)
-
+//https://surikov.github.io/webaudiofont/
+const window = wx
 const b64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
 const b64re = /^(?:[A-Za-z\d+\/]{4})*?(?:[A-Za-z\d+\/]{2}(?:==)?|[A-Za-z\d+\/]{3}=?)?$/;
 
@@ -802,6 +800,8 @@ export const WebAudioFontPlayer = /** @class */ (function () {
                       }
                       audioContext.decodeAudioData(arraybuffer, function (audioBuffer) {
                           zone.buffer = audioBuffer;
+                      },function(err) {
+                        console.log("err(decodeAudioData): "+err);
                       });
                   }
               }

@@ -70,14 +70,17 @@ Page({
   },
 
   play(note){
-    this.playNote = player.queueWaveTable(audioContext, audioContext.destination
+    if(this.playNote) {
+      this.playNote.cancel()
+    }
+    this.playNote  =  player.queueWaveTable(audioContext, audioContext.destination
       , _tone_0750_Chaos_sf2_file, 0, note, 2);
+    
   },
 
   stopPlay() {
-    if(this.playNote){
-      this.playNote.cancel();
-      this.playNote = null;
+    if(this.playNote) {
+      this.playNote.cancel()
     }
   },
 
@@ -98,7 +101,6 @@ Page({
     })
 
     autorun(() => {
-      console.log("note:",store.note)
       if (store.note > 0) {
         this.play(store.note)
       } else {
