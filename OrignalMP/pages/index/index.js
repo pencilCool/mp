@@ -26,6 +26,9 @@ Page({
   },
 
   touchendHalfStep () {
+    if(this.playNote) {
+      this.playNote.cancel()
+    }
     store.halfStep = 0
   },
 
@@ -34,6 +37,9 @@ Page({
   },
 
   touchendOctave () {
+    if(this.playNote) {
+      this.playNote.cancel()
+    }
     store.octave = 0
   },
 
@@ -42,6 +48,9 @@ Page({
   },
 
   touchendTwoOctaves () {
+    if(this.playNote) {
+      this.playNote.cancel()
+    }
     store.twoOctave = 0 
   },
 
@@ -50,6 +59,9 @@ Page({
   },
 
   touchend1() {
+    if(this.playNote) {
+      this.playNote.cancel()
+    }
     store.one = 0
   },
 
@@ -58,6 +70,9 @@ Page({
   },
 
   touchend2() {
+    if(this.playNote) {
+      this.playNote.cancel()
+    }
     store.two = 0
   },
 
@@ -66,6 +81,9 @@ Page({
   },
 
   touchend4() {
+    if(this.playNote) {
+      this.playNote.cancel()
+    }
     store.four = 0
   },
 
@@ -74,7 +92,7 @@ Page({
       this.playNote.cancel()
     }
     this.playNote  =  player.queueWaveTable(audioContext, audioContext.destination
-      , _tone_0750_Chaos_sf2_file, 0, note, 2);
+      , _tone_0750_Chaos_sf2_file, 0, note, 10);
     
   },
 
@@ -99,6 +117,8 @@ Page({
       store, 
       fields: ["scale","note"]
     })
+
+    this.play(60)
 
     autorun(() => {
       if (store.note > 0) {

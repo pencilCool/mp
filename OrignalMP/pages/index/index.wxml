@@ -1,6 +1,8 @@
 <!--index.wxml-->
 <view class="container">
     <view class="row">
+      <button class="button">{{note}}</button>
+      <button class="button" >{{scale}}</button>
       <button class="button" bindtap="tap">测试</button>
     </view>
     
@@ -15,8 +17,7 @@
       <button class="button" bind:touchstart="touchstart4" bind:touchend="touchend4" >4</button>
     </view>
     <view class="row">
-      <view class="button">{{scale}}</view>
-      <view class="button">{{note}}</view>
+   
       <button class="button" bindtap="goSetting">setting</button>
     </view>
 </view>
