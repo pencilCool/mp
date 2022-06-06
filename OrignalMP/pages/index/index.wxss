@@ -1,9 +1,32 @@
 /**index.wxss**/
 
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items:stretch;
+  justify-content: space-around;
+  background-color: rgb(255, 0, 157);
+} 
+
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  background-color: aqua;
+} 
+
+.column {
+  display: flex;
+  flex-direction: column;
+  background-color: brown;
+} 
+
 .button {
   display: flex;
+  width: 40%;
   background-color:#352066;
-  height: 100pt;
-  flex-basis: 30%;
   color: aliceblue;
+  margin: 10pt;
 }

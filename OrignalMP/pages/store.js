@@ -20,7 +20,7 @@ export const store = observable({
   halfStep:0,
   octave:0,
   twoOctave:0,
-  baseNote:69, //  midi note of A4
+  baseNote:60, //  midi note of C4
 
   get scale() {
     return this.one + this.two * 2  + this.four * 4;
