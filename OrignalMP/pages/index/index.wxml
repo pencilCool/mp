@@ -10,15 +10,15 @@
     </view> -->
     
     <view class="column">
-      <button class="button" bind:touchstart="touchstartTwoOctaves" bind:touchend="touchendTwoOctaves" >高音</button>
-      <button class="button" bind:touchstart="touchstartOctave" bind:touchend="touchendOctave" >中音</button>
-      <button class="button" bind:touchstart="touchstartHalfStep" bind:touchend="touchendHalfStep" >#半音</button>
+      <view class="button" bind:touchstart="touchstartTwoOctaves" bind:touchend="touchendTwoOctaves" >高音</view>
+      <view class="button" bind:touchstart="touchstartOctave" bind:touchend="touchendOctave" >中音</view>
+      <view class="button" bind:touchstart="touchstartHalfStep" bind:touchend="touchendHalfStep" >#半音</view>
     </view>
 
     <view class="column">
-      <button class="button" bind:touchstart="touchstart4" bind:touchend="touchend4" >4</button>
-      <button class="button" bind:touchstart="touchstart2" bind:touchend="touchend2" >2</button>
-      <button class="button" bind:touchstart="touchstart1" bind:touchend="touchend1" >1</button>
+      <view class="button" bind:touchstart="touchstart4" bind:touchend="touchend4" >4</view>
+      <view class="button" bind:touchstart="touchstart2" bind:touchend="touchend2" >2</view>
+      <view class="button" bind:touchstart="touchstart1" bind:touchend="touchend1" >1</view>
     </view>
 </view>
 
