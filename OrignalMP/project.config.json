@@ -36,6 +36,7 @@
             "outputPath": ""
         },
         "useIsolateContext": false,
+        "userConfirmedUseIsolateContext": false,
         "userConfirmedBundleSwitch": false,
         "packNpmManually": false,
         "packNpmRelationList": [],
@@ -48,8 +49,8 @@
     },
     "compileType": "miniprogram",
     "libVersion": "2.19.4",
-    "appid": "wx73a5a571f253544d",
-    "projectname": "OrignalMP",
+    "appid": "wx852d9c1648de1cc8",
+    "projectname": "二进制迷笛",
     "debugOptions": {
         "hidedInDevtools": []
     },
