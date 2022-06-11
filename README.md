@@ -5,5 +5,5 @@
 
 ![image](./img/WechatIMG35.jpeg)
 
-
+![image](./img/binary_qr.jpg)
 搜索微信小程序：二进制迷笛
